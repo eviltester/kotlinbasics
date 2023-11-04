@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+java.sourceCompatibility = JavaVersion.VERSION_17
+
 plugins {
     kotlin("jvm") version "1.9.10"
     application
@@ -17,9 +19,10 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
 }
+
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
