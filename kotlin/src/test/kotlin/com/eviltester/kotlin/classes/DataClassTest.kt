@@ -79,5 +79,30 @@ class DataClassTest {
             assertThat(person1!=person2).isTrue()
             assertThat(person1).isNotEqualTo(person2)
         }
+
+        @Test
+        fun `data class copy method makes immutability functional style of coding easier`(){
+
+            val person1 = PersonClassImmutability(name = "my name", age = 23)
+
+            // syntax error if try to change the read only properties
+//            person1.name="cannot change name"
+//            person1.age="cannot change name"
+
+            // create new objects based on old
+            val changedName = person1.changeName(newName = "new name")
+            assertThat(person1.name).isEqualTo("my name")
+            assertThat(changedName.name).isEqualTo("new name")
+
+            // and the age is unchanged
+            assertThat(changedName.age).isEqualTo(person1.age)
+
+            val olderPerson = person1.increaseAge(by = 1)
+            assertThat(person1.age).isEqualTo(23)
+            assertThat(olderPerson.age).isEqualTo(24)
+
+            // and the name is unchanged
+            assertThat(olderPerson.name).isEqualTo(person1.name)
+        }
     }
 }
