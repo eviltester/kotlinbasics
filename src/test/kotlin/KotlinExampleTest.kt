@@ -1,7 +1,7 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-class KotlinTest {
+class KotlinExampleTest {
 
     // methods are functions in Kotlin
     @Test
