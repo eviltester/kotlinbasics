@@ -3,10 +3,10 @@ package com.eviltester.leetexercises.algorithms.totalval.stringmutate
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-class StringAsIntMutateAgainstArrayTest {
+interface StringAsIntMutateAgainstArrayInterfaceTest {
 
     /*
-        Original exercise - https://leetcode.com/problems/two-sum/
+        Original exercise - https://leetcode.com/problems/largest-number-after-mutating-substring/
 
         Given an integer represented as a string
         And a 0-indexed integer array of length 10 that maps each digit 0-9 to another digit.
@@ -23,9 +23,7 @@ class StringAsIntMutateAgainstArrayTest {
      */
 
     // NOTE: to allow this to be an interface test with method that can be overridden
-    private fun maximumNumber(num: String, change: IntArray): String {
-        return StringMutator().maximumNumber(num, change)
-    }
+    fun maximumNumber(num: String, change: IntArray): String
 
     @Test
     fun `example one from leetcode`(){

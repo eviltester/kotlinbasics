@@ -1,6 +1,6 @@
 package com.eviltester.leetexercises.algorithms.sums.twoSumsIntArrayNoErrorHandling
 
-class SummingImplementationTest: TwoSumsGenericTest {
+class SummingImplementationTest: TwoSumsImplementationInterfaceTest {
 
     /*
         Given an array of ints, and a desired total
