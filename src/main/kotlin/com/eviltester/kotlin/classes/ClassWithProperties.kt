@@ -31,4 +31,4 @@ class ClassWithAccessibleProperties(val firstname: String, val surname: String) 
     fun getPrivateName() = privateName
 }
 
-class ClassWithNullableProperties(val firstname: String, val nullableMiddleName:String? = null, val surname: String)
+class ClassWithNullableProperties(val firstname: String, val nullableMiddleName: String? = null, val surname: String)

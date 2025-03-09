@@ -9,7 +9,7 @@ class DataClassTest {
     // Data Classes https://kotlinlang.org/docs/data-classes.html
 
     @Test
-    fun `a data class supports decomposing`(){
+    fun `a data class supports decomposing`() {
 
         // try this with a PersonClass you receive syntax errors
         // can only decompose data classes
@@ -21,7 +21,7 @@ class DataClassTest {
     }
 
     @Test
-    fun `a data class supports copying`(){
+    fun `a data class supports copying`() {
 
         // immutability is easy with a data class using the copy method
         val person1 = PersonDataClass(name = "my name", age = 23)
@@ -38,7 +38,7 @@ class DataClassTest {
     }
 
     @Test
-    fun `a data classes can have functions`(){
+    fun `a data classes can have functions`() {
 
         val person = PersonDataClassWithAddedFun(name = "my name", age = 23)
 
@@ -46,10 +46,10 @@ class DataClassTest {
     }
 
     @Nested
-    inner class EqualityVersusNormalClass{
+    inner class EqualityVersusNormalClass {
 
         @Test
-        fun `a data class automatically creates an equals and hashcode based on content`(){
+        fun `a data class automatically creates an equals and hashcode based on content`() {
 
             val person1 = PersonDataClass(name = "my name", age = 23)
             val person2 = PersonDataClass(name = "my name", age = 23)
@@ -65,7 +65,7 @@ class DataClassTest {
         }
 
         @Test
-        fun `a normal class uses instance rather than value for equality`(){
+        fun `a normal class uses instance rather than value for equality`() {
 
             val person1 = PersonClass(name = "my name", age = 23)
             val person2 = PersonClass(name = "my name", age = 23)
@@ -76,12 +76,12 @@ class DataClassTest {
 
             // so the two objects are not equal
             assertThat(person1.equals(person2)).isFalse
-            assertThat(person1!=person2).isTrue()
+            assertThat(person1 != person2).isTrue()
             assertThat(person1).isNotEqualTo(person2)
         }
 
         @Test
-        fun `data class copy method makes immutability functional style of coding easier`(){
+        fun `data class copy method makes immutability functional style of coding easier`() {
 
             val person1 = PersonClassImmutability(name = "my name", age = 23)
 

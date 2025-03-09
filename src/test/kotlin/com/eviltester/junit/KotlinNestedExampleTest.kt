@@ -7,8 +7,7 @@ class KotlinNestedExampleTest {
 
     @Nested
     @DisplayName("Should show the tests in a hierarchy")
-    inner class NestedTest
-    {
+    inner class NestedTest {
         val nestedValue = "Bob"
 
         @Test
@@ -32,7 +31,7 @@ class KotlinNestedExampleTest {
     }
 
     @Test
-    fun `Kotlin test names can be at a top level`(){
+    fun `Kotlin test names can be at a top level`() {
 
         assertThat(true).isTrue()
     }

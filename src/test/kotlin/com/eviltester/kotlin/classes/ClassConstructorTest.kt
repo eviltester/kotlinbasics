@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class ClassConstructorTest {
 
     @Test
-    fun `constructor params can automatically be used as properties`(){
+    fun `constructor params can automatically be used as properties`() {
 
         val anObject = ClassWithProperties("getterSetter", "readOnly", "private")
 
@@ -24,13 +24,14 @@ class ClassConstructorTest {
     }
 
     @Test
-    fun `method and constructor params can named`(){
+    fun `method and constructor params can named`() {
 
         // recommend calling methods with named syntax for params
         val anObject = ClassWithProperties(
             getterSetter = "getty",
             readOnly = "ready",
-            privateString = "private")
+            privateString = "private"
+        )
 
         assertThat(anObject.getterSetter).isEqualTo("getty")
         assertThat(anObject.readOnly).isEqualTo("ready")
@@ -38,7 +39,7 @@ class ClassConstructorTest {
     }
 
     @Test
-    fun `a class constructor can have default values`(){
+    fun `a class constructor can have default values`() {
 
         val anObject = ClassWithDefaultProperties()
 
@@ -46,9 +47,9 @@ class ClassConstructorTest {
     }
 
     @Test
-    fun `init blocks are executed during initialization`(){
+    fun `init blocks are executed during initialization`() {
 
-        val anObject = ClassWithInitBlocks(firstname="J.R.", middleName = "Bob", surname = "Dobbs")
+        val anObject = ClassWithInitBlocks(firstname = "J.R.", middleName = "Bob", surname = "Dobbs")
 
         assertThat(anObject.getPraised()).isTrue
         assertThat(anObject.getFullName()).isEqualTo("J.R. \"Bob\" Dobbs")
@@ -56,9 +57,9 @@ class ClassConstructorTest {
 
 
     @Test
-    fun `val and var properties auto create getters and setters`(){
+    fun `val and var properties auto create getters and setters`() {
 
-        val anObject = ClassWithAccessibleProperties(firstname="Bob", surname = "Dobbs")
+        val anObject = ClassWithAccessibleProperties(firstname = "Bob", surname = "Dobbs")
 
         assertThat(anObject.fullName).isEqualTo("Bob Dobbs")
         assertThat(anObject.amendName).isEqualTo("Bob Dobbs")
@@ -71,10 +72,10 @@ class ClassConstructorTest {
     }
 
     @Test
-    fun `properties are not nullable by default`(){
+    fun `properties are not nullable by default`() {
 
         // nullableMiddleName is declared as nullable with ? and provided a default value
-        val anObject = ClassWithNullableProperties(firstname="Bob", surname = "Dobbs")
+        val anObject = ClassWithNullableProperties(firstname = "Bob", surname = "Dobbs")
         assertThat(anObject.nullableMiddleName).isNull()
     }
 

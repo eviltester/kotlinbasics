@@ -7,7 +7,7 @@ class BasicClassTest {
 
 
     @Test
-    fun `can create a class with no constructor params`(){
+    fun `can create a class with no constructor params`() {
         val constructedWithNoParams = ReturnBoolean()
 
         assertThat(constructedWithNoParams.returnTrue()).isTrue()
@@ -17,7 +17,7 @@ class BasicClassTest {
     }
 
     @Test
-    fun `methods can be written as direct statements`(){
+    fun `methods can be written as direct statements`() {
         val constructedWithNoParams = ReturnBoolean()
 
         assertThat(constructedWithNoParams.returnFalse()).isFalse
@@ -25,11 +25,9 @@ class BasicClassTest {
 
 
     @Test
-    fun `return value types can be inferred`(){
+    fun `return value types can be inferred`() {
         val constructedWithNoParams = ReturnBoolean()
 
         assertThat(constructedWithNoParams.returnFalseInferredType()).isFalse
     }
-
-
 }

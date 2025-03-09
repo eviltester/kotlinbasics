@@ -15,7 +15,14 @@ repositories {
 }
 
 dependencies {
+
+    // add logging https://github.com/oshai/kotlin-logging
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    // logging for stdout
+    implementation("org.slf4j:slf4j-simple:2.0.3")
+
     testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.6.3")
     testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
