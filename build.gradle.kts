@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 plugins {
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "2.1.10"
     application
 }
 
